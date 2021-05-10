@@ -13,3 +13,7 @@
 10. Expansion shield for Arduino Nano  [LINK](https://www.amazon.in/Robodo-Electronics-AR28-Expansion-Arduino/dp/B0787JNN4S/ref=sr_1_2?dchild=1&keywords=Expansion+shield+for+Arduino+Nano&qid=1620661683&sr=8-2)
 11. sg90 servo
 12. 3d Printed parts
+
+## **In Progress !!!! COMING SOON !!!! **
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/makemyAIcar_1.jpg)

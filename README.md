@@ -1,7 +1,7 @@
 # makemyAIcar
 
 ## Below components used:
-1. Raspberry Pi 4 (2GB)
+1. <del>Raspberry Pi 4 (2GB)</del>
 2. Raspberry Pi 4 Aluminum Heat Sink Case with Double Fans  [LINK](https://www.amazon.in/REES52-Raspberry-Armor-Aluminium-Heatsink/dp/B07X5XXKTZ/ref=sr_1_1?dchild=1&keywords=Raspberry+Pi+4+Aluminum+Heat+Sink+Case&qid=1620661429&sr=8-1)
 3. 32gb SanDisk Extreme 
 4. Raspberry Pi CAmera V2

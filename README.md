@@ -35,3 +35,13 @@ follow the guideline mention below link to install required packages
 ### **Assembly**
 ![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/Assembly.png)
 
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_2gb.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_bench_test4.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_Top_view.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_Bottom_view.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_bench_test1.jpg)
+

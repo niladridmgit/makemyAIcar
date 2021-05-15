@@ -15,6 +15,19 @@
 13. 3d Printed parts
 14. tp-link dual band Wireless adapter [LINK](https://www.amazon.in/TP-Link-Archer-T2U-Wireless-Adapter/dp/B00K11UIV4)
 
-## **In Progress !!!! COMING SOON !!!! **
+Raspberry pi 4 (2gb) has more power full and newer cpu (Broadcom BCM2711 quad-core 64-bit ARM Cortex-A72 CPU @ 1.5 GHz) compare to jetson anao (quad-core ARM Cortex-A57 64-bit @ 1.42 GHz) but jetson nano has power full gpu **NVIDIA Maxwell architecture with 128 NVIDIA CUDA® cores** good enough to process object detection at 30fps
+for more details about Jetson Nano 2gb see here [LINK](https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit)
 
+We need TensorRT-accelerated deep learning networks for image recognition, object detection with localization (i.e. bounding boxes), and semantic segmentation. This inferencing library is intended to be run on the Jetson, and includes support for both C++ and Python. Various pre-trained DNN models are automatically downloaded to get you up and running quickly. 
+
+follow the guideline mention below link to install required packages
+
+**https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md**
+
+## **In Progress**
+
+## **Earlier design**
 ![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/makemyAIcar_1.jpg)
+
+## **New design**
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_bench_test4.jpg)

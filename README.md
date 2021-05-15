@@ -43,5 +43,19 @@ follow the guideline mention below link to install required packages
 
 ![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_Bottom_view.jpg)
 
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/3d_printed_stepper_mount_1.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/free_wheel.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/3p_printed_RPI_CAM_V2_mount1.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/3p_printed_RPI_CAM_V2_mount2.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/3p_printed_RPI_CAM_V2_mount3.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/3p_printed_RPI_CAM_V2_mount4.jpg)
+
+![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_bench_test3.jpg)
+
 ![alt text](https://github.com/niladridmgit/makemyAIcar/blob/main/images/jetson_nano_build_bench_test1.jpg)
 

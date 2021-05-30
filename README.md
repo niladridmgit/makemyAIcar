@@ -33,13 +33,13 @@ Prerequisite:
 ### Check for updates
 $ sudo apt-get update
 $ sudo apt-get upgrade
-# Install nano
+### Install nano
 $ sudo apt-get install nano
 ### Install dphys-swapfile
 $ sudo apt-get install dphys-swapfile
-# give the required memory size
+### Give the required memory size
 $ sudo nano /etc/dphys-swapfile
-# Reboot 
+### Reboot 
 $ sudo reboot.
 
 ### Reveal the CUDA location

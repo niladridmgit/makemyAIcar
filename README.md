@@ -192,6 +192,7 @@ sudo nano .bashrc
 add below lines
 
 export LD_PRELOAD = /usr/lib/aarch64-linux-gnu/libgomp.so.1
+
 export DISPLAY=:0.0
 
 ## **Serial Port Permission**

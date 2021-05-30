@@ -30,22 +30,22 @@ Prerequisite:
 
 **https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html**
 
-# a fresh start, so check for updates
+### Check for updates
 $ sudo apt-get update
 $ sudo apt-get upgrade
-# install nano
+# Install nano
 $ sudo apt-get install nano
-# install dphys-swapfile
+### Install dphys-swapfile
 $ sudo apt-get install dphys-swapfile
 # give the required memory size
 $ sudo nano /etc/dphys-swapfile
-# reboot afterwards
+# Reboot 
 $ sudo reboot.
 
-# reveal the CUDA location
+### Reveal the CUDA location
 $ sudo sh -c "echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/nvidia-tegra.conf"
 $ sudo ldconfig
-# third-party libraries
+### Third-party libraries
 $ sudo apt-get install build-essential cmake git unzip pkg-config
 $ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
 $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
@@ -63,17 +63,17 @@ $ sudo apt-get install liblapack-dev libeigen3-dev gfortran
 $ sudo apt-get install libhdf5-dev protobuf-compiler
 $ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev
 
-# download the latest version
+### Download the latest version
 $ cd ~
 $ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip
 $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip
-# unpack
+### Unpack
 $ unzip opencv.zip
 $ unzip opencv_contrib.zip
-# some administration to make live easier later on
+### Administration to make live easier later on
 $ mv opencv-4.5.2 opencv
 $ mv opencv_contrib-4.5.2 opencv_contrib
-# clean up the zip files
+### Clean up the zip files
 $ rm opencv.zip
 $ rm opencv_contrib.zip
 
@@ -119,23 +119,23 @@ $ make -j4
 $ sudo rm -r /usr/include/opencv4/opencv2
 $ sudo make install
 $ sudo ldconfig
-# cleaning (frees 300 MB)
+### Cleaning (frees 300 MB)
 $ make clean
 $ sudo apt-get update
-# remove the dphys-swapfile now
+### Remove the dphys-swapfile now
 $ sudo /etc/init.d/dphys-swapfile stop
 $ sudo apt-get remove --purge dphys-swapfile
 
-# just a tip to save an additional 275 MB
+### Save an additional 275 MB
 $ sudo rm -rf ~/opencv
 $ sudo rm -rf ~/opencv_contrib
 
 $ sudo -H pip install -U jetson-stats
 $ sudo reboot
-# start the app with the simple command
+### Start the app with the simple command
 $ jtop
 
-## Install GStreamer 
+### Install GStreamer 
 
 https://gstreamer.freedesktop.org/download/
 

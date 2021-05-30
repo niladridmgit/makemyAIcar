@@ -81,21 +81,33 @@ $ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev
 
 ### Download the latest version
 $ cd ~
+
 $ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip
+
 $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip
+
 ### Unpack
 $ unzip opencv.zip
+
 $ unzip opencv_contrib.zip
+
 ### Administration to make live easier later on
 $ mv opencv-4.5.2 opencv
+
 $ mv opencv_contrib-4.5.2 opencv_contrib
+
 ### Clean up the zip files
 $ rm opencv.zip
+
 $ rm opencv_contrib.zip
 
+
 $ cd ~/opencv
+
 $ mkdir build
+
 $ cd build
+
 
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr \
@@ -133,21 +145,31 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 $ make -j4
 
 $ sudo rm -r /usr/include/opencv4/opencv2
+
 $ sudo make install
+
 $ sudo ldconfig
+
 ### Cleaning (frees 300 MB)
 $ make clean
+
 $ sudo apt-get update
+
 ### Remove the dphys-swapfile now
 $ sudo /etc/init.d/dphys-swapfile stop
+
 $ sudo apt-get remove --purge dphys-swapfile
+
 
 ### Save an additional 275 MB
 $ sudo rm -rf ~/opencv
+
 $ sudo rm -rf ~/opencv_contrib
 
 $ sudo -H pip install -U jetson-stats
+
 $ sudo reboot
+
 ### Start the app with the simple command
 $ jtop
 

@@ -173,7 +173,7 @@ $ sudo reboot
 ### Start the app with the simple command
 $ jtop
 
-### Install GStreamer 
+## **Install GStreamer**
 
 https://gstreamer.freedesktop.org/download/
 
@@ -184,6 +184,19 @@ edit environment variable and add  gstreamer bin path F:\gstreamer\1.0\mingw_x86
 in command line Terminal Execute->
 
 gst-launch-1.0 -v udpsrc port=1234 caps = "application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96" ! rtph264depay ! decodebin ! videoconvert ! autovideosink
+
+## **OprnCV with Jeson Utility**
+
+sudo nano .bashrc
+
+add below lines
+
+export LD_PRELOAD = /usr/lib/aarch64-linux-gnu/libgomp.so.1
+export DISPLAY=:0.0
+
+## **Serial Port Permission**
+
+sudo usermod -a -G dialout $USER
 
 ## **In Progress**
 

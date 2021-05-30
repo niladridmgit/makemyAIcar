@@ -6,7 +6,7 @@
 3. <del>32gb SanDisk Extreme</del> upgraded to **USB SSD 256 gb** 
 5. Raspberry Pi CAmera V2
 6. Car Chassis Transparent 4Wd  [LINK](https://www.amazon.in/gp/product/B01MT9Z9QB/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) 
-7. 8Ybj-48 Dc 5V 4 Phase 5 Wire Stepper Motor With Uln2003 Driver  [LINK](https://www.amazon.in/gp/product/B072T8QT62/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1)
+7. <del>8Ybj-48 Dc 5V 4 Phase 5 Wire Stepper Motor With Uln2003 Driver  [LINK](https://www.amazon.in/gp/product/B072T8QT62/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1)</del>
 8. hc sr04 ultrasonic sensor
 9. Mi Pocket Power Bank Pro 10000mAh 
 10. Arduino nano

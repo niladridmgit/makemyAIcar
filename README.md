@@ -2,7 +2,7 @@
 
 ## Below components used:
 1. <del>Raspberry Pi 4 (2GB)</del> due to performance issue decided to go with **Jetson nano 4GB - B01**
-2. <del>Raspberry Pi 4 Aluminum Heat Sink Case with Double Fans  [LINK](https://www.amazon.in/REES52-Raspberry-Armor-Aluminium-Heatsink/dp/B07X5XXKTZ/ref=sr_1_1?dchild=1&keywords=Raspberry+Pi+4+Aluminum+Heat+Sink+Case&qid=1620661429&sr=8-1)</del> this is not compatible with jetson nano so added **4 qcm 5v colling fan**
+2. <del>Raspberry Pi 4 Aluminum Heat Sink Case with Double Fans  [LINK](https://www.amazon.in/REES52-Raspberry-Armor-Aluminium-Heatsink/dp/B07X5XXKTZ/ref=sr_1_1?dchild=1&keywords=Raspberry+Pi+4+Aluminum+Heat+Sink+Case&qid=1620661429&sr=8-1)</del> this is not compatible with jetson nano so added **4 Sqcm 5v colling fan**
 3. <del>32gb SanDisk Extreme</del> upgraded to **USB SSD 256 gb** 
 5. Raspberry Pi CAmera V2
 6. Car Chassis Transparent 4Wd  [LINK](https://www.amazon.in/gp/product/B01MT9Z9QB/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) 

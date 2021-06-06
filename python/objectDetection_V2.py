@@ -5,7 +5,8 @@ import cv2
 import numpy as np
 from csi_camera import CSI_Camera
 from dcMotorControl import dcMotorControl
-from adafruit_servokit import ServoKit
+from rpiVoice import rpiVoice
+from adafruit_servokit import ServoKit 
 from datetime import datetime
 
 #net = jetson.inference.detectNet("facenet-120", threshold=0.5)
@@ -13,6 +14,8 @@ net = jetson.inference.detectNet("ssd-mobilenet-v2", threshold=0.5)
 display = jetson.utils.videoOutput("rtp://192.168.1.120:1234")
 
 dc_motor = dcMotorControl()
+RPI_VOICE_CMD = ["START"]
+rpi_voice = rpiVoice()
 
 
 DISPLAY_WIDTH=640
@@ -29,6 +32,7 @@ def millis(start_time):
    return ms
 
 def show_camera():
+    rpi_voice.start(RPI_VOICE_CMD)
     left_camera = CSI_Camera()
     left_camera.create_gstreamer_pipeline(
             sensor_id=0,
@@ -53,6 +57,7 @@ def show_camera():
         # Start counting the number of frames read and displayed
         left_camera.start_counting_fps()
         start_time = datetime.now()
+        send_voice = datetime.now()
         cam_servo = ServoKit(channels=16)
         pan_angle = 90
         pitch_angle=90
@@ -63,10 +68,18 @@ def show_camera():
             _ ,img=left_camera.read()
             imgCuda=jetson.utils.cudaFromNumpy(img)
             detections = net.Detect(imgCuda)
+            process = 0
+
             for d in detections:
                 #print(net.GetClassDesc(d.ClassID))
                 #print(d.ClassID)
+                #if millis(send_voice)>5000:
+                    #rpi_voice.sendText(net.GetClassDesc(d.ClassID))
+                    #print(RPI_VOICE_CMD[0])
+                    #send_voice = datetime.now()
+
                 if d.ClassID==1: #47:
+                    process=1
                     x1,y1,x2,y2 = int(d.Left),int(d.Top),int(d.Right),int(d.Bottom)
                     #className = net.GetClassDesc(d.ClassID)
                     #print(d.ClassID)
@@ -87,16 +100,14 @@ def show_camera():
                     cv2.line(img,(int(x_c),int(y_c)),(int(x_c),int(DISPLAY_HEIGHT/2)),(255,0,0),2)
 
                 if millis(start_time)>50:
-                    process = 0
-                    for person in detections:
-                        if person.ClassID==1:
-                            process=1
-
+                    if RPI_VOICE_CMD[0] =='END':
+                        dc_motor.sendCmd(1)
+                        continue
                     if process==1:
                         #print(millis(start_time))
                         pan = (DISPLAY_WIDTH/2) - x_c
                         pitch = (DISPLAY_HEIGHT/2) - y_c
-                        print("pan {} pitch {}".format(pan,pitch))
+                        #print("pan {} pitch {}".format(pan,pitch))
                         if pan>50:
                             if (pan_angle - step) < 170:
                                 if pan>50:
@@ -110,7 +121,7 @@ def show_camera():
                                 #cam_servo.servo[0].angle = pan_angle
                             # DC Motor Right #
                             dc_motor.sendCmd(2)
-                            print('Left')
+                            #print('Left')
                         elif pan<-50:
                             if (pan_angle - step) > 10:
                                 if pan<-50:
@@ -124,16 +135,16 @@ def show_camera():
                                 #cam_servo.servo[0].angle=pan_angle
                             # DC Motor Left #
                             dc_motor.sendCmd(3)
-                            print('Right')
+                            #print('Right')
                         elif area < 200000 :
                             dc_motor.sendCmd(0)
-                            print('Go')
+                            #print('Go')
                         elif area > 240000 :
                             dc_motor.sendCmd(4)
-                            print('Back')
+                            #print('Back')
                         else:
                             dc_motor.sendCmd(1)
-                            print('Stop') 
+                            #print('Stop') 
 
                         
                         if pitch<-15:
@@ -166,7 +177,7 @@ def show_camera():
             cv2.line(img,(int(DISPLAY_WIDTH/2),0),(int(DISPLAY_WIDTH/2),DISPLAY_HEIGHT),(0,0,255),2)
             cv2.line(img,(0,int(DISPLAY_HEIGHT/2)),(DISPLAY_WIDTH,int(DISPLAY_HEIGHT/2)),(255,0,0),2)
             cv2.circle(img,(int(DISPLAY_WIDTH/2),int(DISPLAY_HEIGHT/2)),3,(255.255,255),2)
-            display.Render(imgCuda)
+            #display.Render(imgCuda)
             cv2.imshow("img show", img)
             keyCode = cv2.waitKey(1) & 0xFF
             # Stop the program on the ESC key

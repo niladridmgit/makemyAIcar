@@ -15,7 +15,7 @@ $ sudo pip3 install opencv-python dataclasses
 ## Reference
 
 https://github.com/PINTO0309/mediapipe-bin
-
+```
 $ sudo apt update && \
   sudo apt install -y python3-dev protobuf-compiler python3-pip git make libssl-dev
 $ sudo pip3 install pip --upgrade
@@ -26,3 +26,4 @@ numpy-1.19.4-cp36-none-manylinux2014_aarch64.whl \
 opencv_contrib_python-4.5.2.52-cp36-none-linux_aarch64.whl \
 mediapipe-0.8.5_cuda102-cp36-none-linux_aarch64.whl
 $ sudo pip3 install opencv-python dataclasses
+```

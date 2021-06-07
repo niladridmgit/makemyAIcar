@@ -7,3 +7,7 @@ numpy-1.19.4.whl \
 opencv_contrib_python-4.5.2.52.whl \
 mediapipe-0.8.5.whl
 $ sudo pip3 install opencv-python dataclasses
+
+## Reference
+
+https://github.com/PINTO0309/mediapipe-bin

@@ -33,83 +33,75 @@ Prerequisite:
 **https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html**
 
 ### Check for updates
+```
 $ sudo apt-get update
 $ sudo apt-get upgrade
+```
 ### Install nano
+```
 $ sudo apt-get install nano
+```
 ### Install dphys-swapfile
+```
 $ sudo apt-get install dphys-swapfile
+```
 ### Give the required memory size
+```
 $ sudo nano /etc/dphys-swapfile
+```
 ### Reboot 
+```
 $ sudo reboot.
+```
 
 ### Reveal the CUDA location
+```
 $ sudo sh -c "echo '/usr/local/cuda/lib64' >> /etc/ld.so.conf.d/nvidia-tegra.conf"
 $ sudo ldconfig
+```
 ### Third-party libraries
+```
 $ sudo apt-get install build-essential cmake git unzip pkg-config
-
 $ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-
 $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
-
 $ sudo apt-get install libgtk2.0-dev libcanberra-gtk*
-
 $ sudo apt-get install python3-dev python3-numpy python3-pip
-
 $ sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev
-
 $ sudo apt-get install libtbb2 libtbb-dev libdc1394-22-dev
-
 $ sudo apt-get install libv4l-dev v4l-utils
-
 $ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-
 $ sudo apt-get install libavresample-dev libvorbis-dev libxine2-dev
-
 $ sudo apt-get install libfaac-dev libmp3lame-dev libtheora-dev
-
 $ sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev
-
 $ sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev
-
 $ sudo apt-get install liblapack-dev libeigen3-dev gfortran
-
 $ sudo apt-get install libhdf5-dev protobuf-compiler
-
 $ sudo apt-get install libprotobuf-dev libgoogle-glog-dev libgflags-dev
-
+```
 
 ### Download the latest version
+```
 $ cd ~
-
 $ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip
-
 $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip
-
+```
 ### Unpack
+```
 $ unzip opencv.zip
-
 $ unzip opencv_contrib.zip
-
+```
 ### Administration to make live easier later on
+```
 $ mv opencv-4.5.2 opencv
-
 $ mv opencv_contrib-4.5.2 opencv_contrib
-
+```
 ### Clean up the zip files
+```
 $ rm opencv.zip
-
 $ rm opencv_contrib.zip
-
-
 $ cd ~/opencv
-
 $ mkdir build
-
 $ cd build
-
 
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr \
@@ -145,36 +137,31 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D BUILD_EXAMPLES=OFF ..
 
 $ make -j4
-
 $ sudo rm -r /usr/include/opencv4/opencv2
-
 $ sudo make install
-
 $ sudo ldconfig
-
+```
 ### Cleaning (frees 300 MB)
+```
 $ make clean
-
 $ sudo apt-get update
-
+```
 ### Remove the dphys-swapfile now
+```
 $ sudo /etc/init.d/dphys-swapfile stop
-
 $ sudo apt-get remove --purge dphys-swapfile
-
-
+```
 ### Save an additional 275 MB
+```
 $ sudo rm -rf ~/opencv
-
 $ sudo rm -rf ~/opencv_contrib
-
 $ sudo -H pip install -U jetson-stats
-
 $ sudo reboot
-
+```
 ### Start the app with the simple command
+```
 $ jtop
-
+```
 ## **Install GStreamer**
 
 https://gstreamer.freedesktop.org/download/
@@ -184,23 +171,20 @@ MinGW 64-bit -> 1.18.4 runtime installer
 edit environment variable and add  gstreamer bin path F:\gstreamer\1.0\mingw_x86_64\bin
 
 in command line Terminal Execute->
-
+```
 gst-launch-1.0 -v udpsrc port=1234 caps = "application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96" ! rtph264depay ! decodebin ! videoconvert ! autovideosink
-
+```
 ## **OprnCV with Jetson Utility**
-
+```
 sudo nano .bashrc
-
 add below lines
-
 export LD_PRELOAD = /usr/lib/aarch64-linux-gnu/libgomp.so.1
-
 export DISPLAY=:0.0
-
+```
 ## **Serial Port Permission**
-
+```
 sudo usermod -a -G dialout $USER
-
+```
 ## **In Progress**
 
 ## **Earlier design**

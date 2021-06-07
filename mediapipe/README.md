@@ -8,9 +8,9 @@ opencv_contrib_python-4.5.2.52.whl \
 mediapipe-0.8.5.whl
 $ sudo pip3 install opencv-python dataclasses
 
-#### now your CSI camera using gstreamer_pipeline might not work so just remove opencv_contrib_python-4.5.2.52 by executing below command
+### now your CSI camera using gstreamer_pipeline might not work so just remove opencv_contrib_python-4.5.2.52 by executing below command
 
-**$ sudo pip3 uninstall mediapipe-0.8.5.whl**
+**$ sudo pip3 uninstall opencv_contrib_python-4.5.2.52.whl**
 
 ## Reference
 
